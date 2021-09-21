@@ -88,7 +88,7 @@ int main(void) {
 		}
 	} while (opcion != 5);
 
-	printf("gracias por utilizar la calucladora anasheii!!");
+	printf("gracias por utilizar la calucladora!!");
 	return EXIT_SUCCESS;
 }
 
