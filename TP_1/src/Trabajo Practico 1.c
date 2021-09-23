@@ -66,7 +66,7 @@ int main(void) {
 			}
 			if (resultadoFactorizacionUno == -1) {
 				printf(
-						" el factorial de %.2f no pudo sacarse debido a que solo se puede sacar el factorial de un numero positivo y entero\n",
+						" el factorial de %.2f no pudo sacarse debido a que solo se puede sacar el factorial de un numero entero entre el 0 y el 35.\n",
 						numeroUno);
 			} else {
 				printf("el factorial de %.2f es: %.2f\n", numeroUno,
@@ -74,7 +74,7 @@ int main(void) {
 			}
 			if (resultadoFactorizacionDos == -1) {
 				printf(
-						"el factorial de %.2f no pudo sacarse debido a que solo se puede sacar el factorial de un numero positivo y entero\n\n\n",
+						"el factorial de %.2f no pudo sacarse debido a que solo se puede sacar el factorial de un numero entero entre el 0 y el 35.\n\n\n",
 						numeroDos);
 			} else {
 				printf("el factorial de %.2f es: %.2f \n\n\n", numeroDos,
@@ -88,7 +88,7 @@ int main(void) {
 		}
 	} while (opcion != 5);
 
-	printf("gracias por utilizar la calucladora anasheii!!");
+	printf("gracias por utilizar la calucladora!!!");
 	return EXIT_SUCCESS;
 }
 

@@ -29,7 +29,7 @@ float multiplicacion(float numero1, float numero2) {
 float factorizacion(float numero1) {
 	float resultado = -1;
 
-	if (numero1 - (int) numero1 == 0 && numero1 > -1) {
+	if (numero1 - (int) numero1 == 0 && numero1 > 0 && numero1 < 35) {
 		float multiplicador;
 
 		multiplicador = numero1 - 1;
@@ -39,7 +39,13 @@ float factorizacion(float numero1) {
 			multiplicador--;
 		}
 
-		return numero1;
+		return resultado = numero1;
+	} else {
+		if (numero1 == 0) {
+			numero1 = 1;
+			resultado = numero1;
+		}
+
 	}
 
 	return resultado;
