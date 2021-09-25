@@ -39,7 +39,7 @@ int menu(int banderaNumeroUno, int banderaNumeroDos, float numeroUno,
 
 	}
 
-	opcion = getInt("ingrese la opcion deseada");
+	 getValidInt("ingrese la opcion deseada", &opcion);
 	return opcion;
 
 }

@@ -11,8 +11,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "utn.h"
 #include "Biblioteca.h"
+#include "input.h"
 #include "menu.h"
 int main(void) {
 	setbuf(stdout, NULL);
@@ -31,11 +31,11 @@ int main(void) {
 		opcion = menu(banderaNumeroUno, banderaNumeroDos, numeroUno, numeroDos);
 		switch (opcion) {
 		case 1:
-			numeroUno = getFloat("ingrese el primer operando: ");
+			getValidFloat("ingrese el numero", &numeroUno);
 			banderaNumeroUno = 1;
 			break;
 		case 2:
-			numeroDos = getFloat("ingrese el segundo operando: ");
+			getValidFloat("ingrese el numero", &numeroDos);
 			banderaNumeroDos = 1;
 			break;
 		case 3:

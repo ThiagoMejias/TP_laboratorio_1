@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include  <string.h>
 #include "biblioteca.h"
-#include "utn.h"
+#include "input.h"
 
 /**
  * @brief se muestra una serie de opciones y se selecciona una
