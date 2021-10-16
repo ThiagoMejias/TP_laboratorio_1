@@ -2,10 +2,7 @@
  * empleados.c¿
  *
  *  Created on: 27 sep. 2021
- *      Author: Thiago
- *      getValidString("ingrese el nombre\n",
- "tingrese correctamente el nombre\n",
- "el nombre es demasiado grande\n", newEmployee.name, 51, 10);
+ *      Author: Thiago Mejias
  *
  */
 

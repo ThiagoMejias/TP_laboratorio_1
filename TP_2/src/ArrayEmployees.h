@@ -158,6 +158,5 @@ int sortEmployees(Employee *list, int len, int option);
 
 int sortUpEmployees(Employee *list, int len);
 int sortDownEmployees(Employee *list, int len);
-int sortEmployees(Employee *list, int len, int option);
-
+int callSortEmployees(Employee *list, int len);
 #endif /* ARRAYEMPLOYEES_H_ */
