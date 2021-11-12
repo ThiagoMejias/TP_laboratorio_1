@@ -61,6 +61,8 @@ int parser_EmployeeFromBinary(FILE *pFile, LinkedList *pArrayListEmployee) {
 					ll_add(pArrayListEmployee, aux);
 				}
 				retorno = 0;
+			} else {
+				printf("Ocurrio un error\n");
 			}
 
 		} while (!feof(pFile));
@@ -99,6 +101,8 @@ int parser_textFromEmployee(FILE *pFile, LinkedList *pArrayListEmployee) {
 		}
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -120,6 +124,8 @@ int parser_binaryFromEmployee(FILE *pFile, LinkedList *pArrayListEmployee) {
 			retorno = 0;
 		}
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	return retorno;
 }
@@ -134,6 +140,8 @@ int get_id_Text(int *id) {
 	if (pFile != NULL) {
 		fscanf(pFile, "%[^\n]", idStr);
 		*id = atoi(idStr);
+	} else {
+		printf("Ocurrio un error\n");
 	}
 //	printf("%s\n", idStr);
 	fclose(pFile);
@@ -152,6 +160,8 @@ int set_id_Text(int id) {
 
 		retorno = 0;
 		fclose(pFile);
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;

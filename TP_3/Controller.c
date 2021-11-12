@@ -17,6 +17,8 @@ int controller_loadFromText(char *path, LinkedList *pArrayListEmployee) {
 		parser_EmployeeFromText(pFile, pArrayListEmployee);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	fclose(pFile);
 	return retorno;
@@ -41,6 +43,8 @@ int controller_loadFromBinary(char *path, LinkedList *pArrayListEmployee) {
 		parser_EmployeeFromBinary(pFile, pArrayListEmployee);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	fclose(pFile);
 	return retorno;
@@ -80,6 +84,8 @@ int controller_addEmployee(LinkedList *pArrayListEmployee) {
 			printf("el empleado fue dada de alta correctamente\n");
 			retorno = 0;
 
+		} else {
+			printf("Ocurrio un error\n");
 		}
 	}
 	return retorno;
@@ -147,6 +153,8 @@ int controller_ListEmployee(LinkedList *pArrayListEmployee) {
 			retorno = 0;
 		}
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -184,6 +192,8 @@ int controller_editEmployee(LinkedList *pArrayListEmployee) {
 		}
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -261,6 +271,8 @@ int controller_sortEmployee(LinkedList *pArrayListEmployee) {
 		} while (option != 4);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -284,6 +296,8 @@ int controller_saveAsText(char *path, LinkedList *pArrayListEmployee) {
 		parser_textFromEmployee(pFile, pArrayListEmployee);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	fclose(pFile);
 	return retorno;
@@ -306,6 +320,8 @@ int controller_saveAsBinary(char *path, LinkedList *pArrayListEmployee) {
 	if (pFile != NULL) {
 		parser_binaryFromEmployee(pFile, pArrayListEmployee);
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	fclose(pFile);
 	return retorno;
@@ -345,6 +361,8 @@ int generadorDeId(LinkedList *pArrayListEmployee, int *id) {
 			retorno = 0;
 		}
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;

@@ -7,6 +7,8 @@ int employee_setSueldo(Employee *this, int sueldo) {
 	if (this != NULL) {
 		this->sueldo = sueldo;
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -20,6 +22,8 @@ int employee_getSueldo(Employee *this, int *sueldo) {
 		*sueldo = this->sueldo;
 		retorno = 0;
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	return retorno;
 }
@@ -32,6 +36,8 @@ int employee_setId(Employee *this, int id) {
 	if (this != NULL) {
 		this->id = id;
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -45,6 +51,8 @@ int employee_getId(Employee *this, int *id) {
 		*id = this->id;
 		retorno = 0;
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	return retorno;
 }
@@ -56,6 +64,8 @@ int employee_setNombre(Employee *this, char *nombre) {
 	if (this != NULL) {
 		strcpy(this->nombre, nombre);
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -69,6 +79,8 @@ int employee_getNombre(Employee *this, char *nombre) {
 		strcpy(nombre, this->nombre);
 		retorno = 0;
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	return retorno;
 }
@@ -81,6 +93,8 @@ int employee_setHorasTrabajadas(Employee *this, int horasTrabajadas) {
 	if (this != NULL) {
 		this->horasTrabajadas = horasTrabajadas;
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -93,6 +107,8 @@ int employee_getHorasTrabajadas(Employee *this, int *horasTrabajadas) {
 		*horasTrabajadas = this->horasTrabajadas;
 		retorno = 0;
 
+	} else {
+		printf("Ocurrio un error\n");
 	}
 	return retorno;
 }
@@ -118,6 +134,8 @@ Employee* employee_newParametros(char *idStr, char *nombreStr,
 		employee_setNombre(newEmployee, nombreStr);
 		employee_setSueldo(newEmployee, atoi(sueldoStr));
 		employee_setId(newEmployee, atoi(idStr));
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return newEmployee;
@@ -140,6 +158,8 @@ int employee_print(Employee *this) {
 				sueldoAux);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
@@ -226,6 +246,8 @@ Employee* employee_add(int id) {
 		employee_setNombre(newEmployee, nombraAux);
 		employee_setSueldo(newEmployee, sueldoAux);
 		employee_setId(newEmployee, id);
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return newEmployee;
@@ -323,6 +345,8 @@ int employee_delete(Employee *this) {
 		free(this);
 
 		retorno = 0;
+	} else {
+		printf("Ocurrio un error\n");
 	}
 
 	return retorno;
