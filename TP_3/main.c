@@ -22,9 +22,11 @@ int main() {
 	int option = 0;
 	int id;
 	int banderaDeLectura;
+	int banderaDeAgregado;
 	int banderaDeCambios;
-	banderaDeCambios=-1;
+	banderaDeCambios = -1;
 	banderaDeLectura = 0;
+	banderaDeAgregado = 0;
 	LinkedList *listaEmpleados = ll_newLinkedList();
 
 	do {
@@ -65,23 +67,15 @@ int main() {
 
 			break;
 		case 3:
-			if (banderaDeLectura == 0) {
-
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
-
-			} else {
-				controller_addEmployee(listaEmpleados);
-				banderaDeCambios = 0;
-
-			}
+			banderaDeAgregado = 1;
+			banderaDeCambios = 0;
+			controller_addEmployee(listaEmpleados);
 
 			break;
 		case 4:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 && banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
 				controller_editEmployee(listaEmpleados);
@@ -89,10 +83,9 @@ int main() {
 			}
 			break;
 		case 5:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 && banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
 				controller_removeEmployee(listaEmpleados);
@@ -101,10 +94,9 @@ int main() {
 			break;
 
 		case 6:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 && banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
 				controller_ListEmployee(listaEmpleados);
@@ -113,10 +105,9 @@ int main() {
 
 			break;
 		case 7:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 && banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
 				controller_sortEmployee(listaEmpleados);
@@ -126,31 +117,59 @@ int main() {
 			break;
 
 		case 8:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 || banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
 				banderaDeCambios = 1;
+				banderaDeAgregado = 0;
 				controller_saveAsText(ARCHIVOTEXTO, listaEmpleados);
 			}
 
 			break;
 		case 9:
-			if (banderaDeLectura == 0) {
+			if (banderaDeLectura == 0 && banderaDeAgregado == 0) {
 
-				printf(
-						"Es necesario cargar los datos antes de cualquier operacion\n");
+				printf("Es necesario cargar algun empleado.\n");
 
 			} else {
+				banderaDeAgregado = 0;
 				banderaDeCambios = 1;
 				controller_saveAsBinary(ARCHIVOBINARIO, listaEmpleados);
 			}
 
 			break;
 		case 10:
-			if (banderaDeLectura != 0) {
+			if (banderaDeLectura == 0) {
+				printf(
+						"Recomendamos cargar los datos que estan en nuestra base de datos, para no perder toda esa informacion.\n");
+				printf("1-Cargar en texto\n"
+						"2-Cargar en binario\n"
+						"3-Salir\n");
+				getIntWithParams("ingrese la opcion que desee;",
+						"opcion invalida", &option, 1, 3);
+				switch (option) {
+				case 1:
+
+					controller_loadFromText
+					(ARCHIVOTEXTO, listaEmpleados);
+					banderaDeLectura = 1;
+					break;
+				case 2:
+					controller_loadFromBinary(ARCHIVOBINARIO, listaEmpleados);
+
+					banderaDeLectura = 1;
+					break;
+				case 3:
+
+					break;
+				}
+
+			}
+
+			if (banderaDeLectura != 0 || banderaDeAgregado != 0) {
+
 				if (banderaDeCambios == 0) {
 					printf("No guardo los archivos, "
 							"si no guarda puede ocurrir GRAVES problemas."

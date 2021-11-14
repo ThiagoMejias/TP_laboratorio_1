@@ -237,7 +237,7 @@ Employee* employee_add(int id) {
 	if (newEmployee != NULL) {
 
 		printf("*ingreso de empleados\n*");
-		getStringVerificado("ingrese el nombre correctamente\n",
+		getStringVerificado("ingrese el nombre\n",
 				"error ingrese el nombre correctamente\n", nombraAux);
 		getValidInt("ingrese el sueldo del nuevo empleado.\n", &sueldoAux);
 		getValidInt("ingrese las horas trabajadas\n", &horasTrabajadasAux);
